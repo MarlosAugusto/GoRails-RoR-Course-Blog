@@ -12,6 +12,7 @@
 user = User.where(email: "marlos@teste.com").first_or_initialize
 user.update!(password: "123senha4", password_confirmation: "123senha4")
 
-# 100.times do |i|
-#   BlogPost.create!(title: "Post #{i}", content: "Content #{i}", published_at: Time.current)
-# end
+100.times do |i|
+  blog_post = BlogPost.where(title: "Post #{i}").first_or_initialize
+  blog_post.update!(content: "Content #{i}", published_at: Time.current)
+end
